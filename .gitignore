@@ -1,0 +1,7 @@
+.vs/
+App/.vs/
+App/client/node_modules
+App/client/build/
+App/client/*.cmd
+App/client/npm-debug.log
+App/client/package-lock.json

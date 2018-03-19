@@ -1,0 +1,16 @@
+.numbered-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	li {
+		@include clearfix();
+		&:before {
+			content: attr(data-i);
+			float: left;
+			margin: 0 10px 0 0;
+			font-size: 16px;
+			line-height: 41px;
+			font-weight: 100;
+		}
+	}
+}

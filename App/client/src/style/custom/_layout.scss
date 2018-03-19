@@ -1,0 +1,137 @@
+html,
+body {
+	height: 100%;
+	overflow: hidden;
+}
+
+#wrap {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+}
+
+#root {
+	min-width: 1004px;
+	display: table;
+	height: 100%;
+	width: 100%;
+	table-layout: fixed;
+}
+
+.d-table-row-group {
+	display: table-row-group !important;
+}
+
+.h-1 {
+	height: 1px;
+}
+
+.container-box {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
+}
+
+.multi-column {
+	@include column-count(4);
+	@include column-gap(40px);
+}
+
+.modal {
+	//@include noselect;
+	overflow: auto;
+}
+
+.checkbox-dropdown {
+	margin: 0 12px 0 0;
+	.input-switch,
+	.dropdown-item {
+		vertical-align: middle
+	}
+	.input-switch {
+		margin: 0 0 0 6px;
+	}
+	&:hover {
+		.dropdown-menu {
+			display: block !important;
+		}
+	}
+}
+
+.progress {
+	position: relative;
+	.progress-text {
+		position: absolute;
+		left: 0;
+		right: 0;
+		overflow: hidden;
+		top: 0;
+		text-align: left;
+		font-weight: normal;
+		font: 1rem/1.2rem "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+		color: #333;
+		padding: 0 10px;
+		white-space: nowrap;
+	}
+	.progress-bar {
+		overflow: hidden;
+		position: relative;
+		z-index: 2;
+		clip: rect(0, auto, auto, 0);
+		.progress-text {
+			color: #fff;
+		}
+	}
+}
+
+.loading-fixed {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.2);
+	text-align: center;
+	&:before {
+		content: '';
+		width: 0;
+		height: 100%;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.icon {
+		display: inline-block;
+		font-size: 100px;
+		-webkit-animation: spin 4s linear infinite;
+		-moz-animation: spin 4s linear infinite;
+		animation: spin 4s linear infinite;
+	}
+}
+
+@-moz-keyframes spin {
+	100% {
+		-moz-transform: rotate(-360deg);
+	}
+}
+
+@-webkit-keyframes spin {
+	100% {
+		-webkit-transform: rotate(-360deg);
+	}
+}
+
+@keyframes spin {
+	100% {
+		-webkit-transform: rotate(-360deg);
+		transform: rotate(-360deg);
+	}
+}
+
+.modal-xl { max-width: 1200px; }

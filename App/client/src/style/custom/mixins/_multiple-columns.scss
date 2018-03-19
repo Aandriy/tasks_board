@@ -1,0 +1,83 @@
+@mixin column-count($value) {
+	-moz-column-count: $value;
+	-webkit-column-count: $value;
+	column-count: $value;
+}
+
+@mixin column-fill($value) {
+	-moz-column-fill: $value;
+	-webkit-column-fill: $value;
+	column-fill: $value;
+}
+
+@mixin column-gap($value) {
+	-moz-column-gap: $value;
+	-webkit-column-gap: $value;
+	column-gap: $value;
+}
+
+@mixin column-rule($value) {
+	-moz-column-rule: $value;
+	-webkit-column-rule: $value;
+	column-rule: $value;
+}
+
+@mixin column-rule-color($value) {
+	-moz-column-rule-color: $value;
+	-webkit-column-rule-color: $value;
+	column-rule-color: $value;
+}
+
+@mixin column-rule-style($value) {
+	-moz-column-rule-style: $value;
+	-webkit-column-rule-style: $value;
+	column-rule-style: $value;
+}
+
+@mixin column-rule-width($value) {
+	-moz-column-rule-width: $value;
+	-webkit-column-rule-width: $value;
+	column-rule-width: $value;
+}
+
+@mixin column-span($value) {
+	-moz-column-span: $value;
+	-webkit-column-span: $value;
+	column-span: $value;
+}
+
+@mixin column-width($value) {
+	-moz-column-width: $value;
+	-webkit-column-width: $value;
+	column-width: $value;
+}
+
+@mixin columns($value) {
+	-moz-columns: $value;
+	-webkit-columns: $value;
+	columns: $value;
+}
+
+@mixin column-overflow($value) {
+	-moz-column-overflow: $value;
+	-webkit-column-overflow: $value;
+	column-overflow: $value;
+}
+
+@mixin break-before($value) {
+    -moz-break-before: $value;
+	-webkit-column-break-before: $value;
+	break-before: $value;
+}
+
+@mixin break-after($value) {
+	-moz-break-after: $value;
+	-webkit-column-break-after: $value;
+	break-after: $value;
+}
+
+@mixin break-inside($value) {
+	-moz-break-inside: $value;
+	-webkit-column-break-inside: $value;
+	break-inside: $value;
+}

@@ -1,0 +1,181 @@
+$c-tooltip-color: #ccc;
+$c-tooltip-background: #fff;
+$c-tooltip-border-width: 5px;
+$c-tooltip-border-inner-width: $c-tooltip-border-width - 1;
+.popup-box {
+	position: relative;
+	display: inline-block;
+	&:hover {
+		.popup-box-container {
+			display: block;
+		}
+	}
+}
+
+.popup-box-container {
+	width: 1px;
+	position: absolute;
+	left: 50%;
+	bottom: 100%;
+	font-size: 0;
+	line-height: 0;
+	display: none;
+	z-index: 1050;
+}
+
+.popup-box-holder {
+	float: left;
+	text-align: center;
+	white-space: nowrap;
+	margin: 0 0 $c-tooltip-border-width;
+	font-size: 0;
+	filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.4));
+	&:after {
+		content: '';
+		position: absolute;
+		border: solid;
+		border-width: $c-tooltip-border-width $c-tooltip-border-width 0;
+		border-color: $c-tooltip-color transparent transparent transparent;
+		z-index: 2;
+		width: 0;
+		height: 0;
+		left: 50%;
+		bottom: 0;
+		margin: 0 0 0 0 -($c-tooltip-border-width);
+	}
+	&:before {
+		content: '';
+		display: inline-block;
+		vertical-align: bottom;
+		width: 0;
+		height: 1px;
+	}
+}
+
+.popup-box-frame {
+	white-space: normal;
+	display: inline-block;
+	margin: 0 -9999px;
+	max-width: 200px;
+	border: 1px solid $c-tooltip-color;
+	vertical-align: bottom;
+	background: $c-tooltip-background;
+	padding: 6px 10px;
+	border-radius: 4px;
+	text-align: left;
+	color: #222;
+	font: 1.4rem/1.6rem "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	text-shadow: none;
+	font-weight: 200;
+	&:before {
+		content: '';
+		position: absolute;
+		border: solid;
+		border-width: $c-tooltip-border-inner-width $c-tooltip-border-inner-width 0;
+		border-color: $c-tooltip-background transparent transparent transparent;
+		z-index: 3;
+		width: 0;
+		height: 0;
+		left: 50%;
+		bottom: 2px;
+		margin: 0 0 0 (-$c-tooltip-border-inner-width);
+	}
+}
+
+
+/* bottom */
+
+.popup-box.bottom {
+	.popup-box-container {
+		bottom: auto;
+		top: 100%;
+		height: 0;
+	}
+	.popup-box-holder {
+		margin: $c-tooltip-border-width 0 0;
+	}
+	.popup-box-holder:after {
+		border-width: 0 $c-tooltip-border-width $c-tooltip-border-width;
+		border-color: transparent transparent $c-tooltip-color transparent;
+		bottom: -$c-tooltip-border-width;
+	}
+	.popup-box-frame:before {
+		border-width: 0 $c-tooltip-border-inner-width $c-tooltip-border-inner-width;
+		border-color: transparent transparent $c-tooltip-background transparent;
+		bottom: -$c-tooltip-border-width - 1px;
+	}
+}
+
+
+/* left */
+
+.popup-box.left {
+	.popup-box-container {
+		bottom: auto;
+		top: 50%;
+		left: -$c-tooltip-border-width;
+		height: 0;
+	}
+	.popup-box-holder {
+		margin: 0;
+		text-align: right;
+	}
+	.popup-box-holder:after {
+		border-width: $c-tooltip-border-width 0 $c-tooltip-border-width $c-tooltip-border-width;
+		border-color: transparent transparent transparent $c-tooltip-color;
+		bottom: -$c-tooltip-border-width;
+		left: 0;
+		margin: 0;
+	}
+	.popup-box-frame:before {
+		border-width: $c-tooltip-border-inner-width 0 $c-tooltip-border-inner-width $c-tooltip-border-inner-width;
+		border-color: transparent transparent transparent $c-tooltip-background ;
+		bottom: -$c-tooltip-border-width + 1;
+		left: -1px;
+		margin: 0;
+	}
+	.popup-box-holder:before {
+		vertical-align: middle;
+	}
+	.popup-box-frame {
+		margin: -9999px 0 -9999px -9999px;
+		vertical-align: middle;
+	}
+}
+
+
+/* right */
+
+.popup-box.right {
+	.popup-box-container {
+		bottom: auto;
+		top: 50%;
+		left: 100%;
+		height: 0;
+	}
+	.popup-box-holder {
+		margin: 0 0 0 $c-tooltip-border-width;
+		text-align: left;
+	}
+	.popup-box-holder:after {
+		border-width: $c-tooltip-border-width $c-tooltip-border-width $c-tooltip-border-width 0;
+		border-color: transparent $c-tooltip-color transparent transparent;
+		bottom: -$c-tooltip-border-width;
+		left: 0;
+		margin: 0;
+	}
+	.popup-box-frame:before {
+		border-width: $c-tooltip-border-inner-width $c-tooltip-border-inner-width $c-tooltip-border-inner-width 0;
+		border-color: transparent $c-tooltip-background transparent transparent;
+		bottom: -$c-tooltip-border-width + 1px;
+		left: 2px;
+		margin: 0;
+	}
+	.popup-box-holder:before {
+		vertical-align: middle;
+	}
+	.popup-box-frame {
+		margin: -9999px -9999px -9999px 0;
+		vertical-align: middle;
+	}
+}

@@ -1,0 +1,4 @@
+.formatted-text {
+	white-space: pre-line;
+	@include hyphenation();
+}

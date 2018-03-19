@@ -1,0 +1,5 @@
+.menubar {
+	padding: 5px 10px;
+	background: $gray-100;
+	@include clearfix();
+}

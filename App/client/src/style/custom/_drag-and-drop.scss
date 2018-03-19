@@ -1,0 +1,95 @@
+.drag-and-drop-container {
+	@include noselect;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
+	flex: 1;
+	width: 100%;
+}
+
+.static-item {
+	padding: 6px;
+}
+
+.drag-and-drop-column.available {
+	.drag-and-drop-item-holder {
+		cursor: move;
+	}
+}
+
+.drag-and-drop-item {
+	
+	position: relative;
+	
+	@include noselect;
+	.drag-and-drop-before,
+	.drag-and-drop-after {
+		display: none;
+		position: absolute;
+		left: 0;
+		right: 0;
+		height: 50%;
+		top: 0;
+		z-index: 2;
+		&:hover {
+			&:before {
+				background: rgba(0, 0, 0, 0.3);
+			}
+		}
+		&:before {
+			text-shadow: 1px 1px 3px #fff;
+			content: 'Before';
+			text-align: center;
+			line-height: 40px;
+			position: absolute;
+			left: 10px;
+			right: 10px;
+			height: 40px;
+			border: 2px dashed #000;
+			border-radius: 10px;
+		}
+	}
+	.drag-and-drop-after {
+		top: 50%;
+		&:before {
+			content: 'After';
+			bottom: 4px;
+		}
+	}
+}
+
+.drag-and-drop-avatar {
+	pointer-events: none;
+	position: fixed;
+	z-index: 100;
+	left: 0;
+	top: 0;
+}
+
+.drag-and-drop-container.is-dragged {
+	.drag-and-drop-item.is-dragged-item {
+		opacity: 0.5;
+	}
+	.drag-and-drop-item:not(.is-dragged-item) {
+		&:hover {
+			.drag-and-drop-before,
+			.drag-and-drop-after {
+				display: block;
+			}
+			.drag-and-drop-item-holder {
+				padding: 40px 0;
+			}
+		}
+	}
+	.bord-box {
+		.bord-box-col {
+			&.available {
+				&:hover {
+					background: lighten($green, 50%) !important;
+				}
+			}
+		}
+	}
+}

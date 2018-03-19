@@ -1,0 +1,195 @@
+.task {
+	position: relative;
+	margin-bottom: 8px;
+	.icon {
+		font-size: 16px;
+	}
+	.coments {
+		float: right;
+		margin: -3px -4px 0 0;
+	}
+	.task-head {
+		.badge {
+			color: darken($important-urgent, 16%);
+		}
+	}
+	&[data-importance="importantNotUrgent"] {
+		.task-head {
+			background: $important-not-urgent;
+			@include gradient-x-three-colors($important-not-urgent, lighten($important-not-urgent, 20%), 50%, $important-not-urgent);
+			.badge {
+				color: darken($important-not-urgent, 16%);
+			}
+		}
+		&.overdue{
+			.task-head {
+				@include gradient-x-three-colors($red, lighten($red, 20%), 50%, $important-not-urgent);
+			}
+		}
+	}
+	&[data-importance="notImportantUrgent"] {
+		.task-head {
+			background: $not-important-urgent;
+			@include gradient-x-three-colors($not-important-urgent, lighten($not-important-urgent, 20%), 50%, $not-important-urgent);
+			.badge {
+				color: darken($not-important-urgent, 16%);
+			}
+		}
+		&.overdue{
+			.task-head {
+				@include gradient-x-three-colors($red, lighten($red, 20%), 50%, $not-important-urgent);
+			}
+		}
+	}
+	&[data-importance="notImportantNotUrgent"] {
+		.task-head {
+			background: $not-important-not-urgent;
+			@include gradient-x-three-colors($not-important-not-urgent, lighten($not-important-not-urgent, 20%), 50%, $not-important-not-urgent);
+			.badge {
+				color: darken($not-important-not-urgent, 16%);
+			}
+		}
+		&.overdue{
+			.task-head {
+				@include gradient-x-three-colors($red, lighten($red, 20%), 50%, $not-important-not-urgent);
+			}
+		}
+	}
+	&[data-importance="importantUrgent"] {
+		&.overdue{
+			.task-head {
+				@include gradient-x-three-colors($red, lighten($red, 20%), 50%, $important-urgent);
+			}
+		}
+	}
+}
+
+.task.overdue {
+	.icon {
+		color: $red;
+	}
+	.task-owner-img {
+		border-color: $red;
+		box-shadow: 0 0 10px $red;
+	}
+}
+
+.task-head {
+	margin: 0;
+	background: $task-head-bg-color;
+	color: $task-head-color;
+	border-radius: 3px 3px 0 0;
+	padding: 6px;
+	position: relative;
+	background: $important-urgent;
+	@include gradient-x-three-colors($important-urgent, lighten($important-urgent, 20%), 50%, $important-urgent);
+	.task-head-title {
+		text-shadow: #000 1px 1px 3px;
+		a {
+			padding: 2px 4px;
+			&:hover {
+				text-decoration: none;
+				color: #66B2FF;
+			}
+		}
+	}
+	.task-options {
+		position: absolute;
+		right: 6px;
+		top: 100%;
+		margin: -9px 0 0;
+		.task-options-item {
+			cursor: pointer;
+			height: 20px;
+			width: 20px;
+			line-height: 18px;
+			border-radius: 10px;
+			background: #bbb;
+			border: 1px solid #ccc;
+			box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4);
+			float: left;
+			text-align: center;
+			font-size: 12px;
+			color: #000;
+			&:hover {
+				text-decoration: none;
+				background: #fff;
+			}
+		}
+		
+	}
+}
+
+.task-title {
+	margin: 0;
+	font-size: 1.4rem;
+	line-height: 1.6rem;
+	a {
+		color: #fff;
+		text-transform: capitalize;
+	}
+}
+
+.task-body {
+	border: 1px solid $task-border-color;
+	border-radius: 0 0 3px 3px;
+	font-size: 1.2rem;
+	line-height: 1.6rem;
+	padding: 4px 6px;
+	background: #fff;
+}
+
+.task-foot {
+	border-top: 1px solid $task-border-color;
+	margin: 0 -8px;
+	padding: 4px 8px 0;
+	@include clearfix();
+}
+
+.task-owner {
+	float: right;
+}
+
+.task-owner-img {
+	float: right;
+	height: 41px;
+	width: 41px;
+	margin: -12px -12px -15px 4px;
+	text-align: center;
+	font-size: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	border: 1px dashed #333;
+	border-radius: 22px;
+	background: #fff;
+	position: relative;
+	z-index: 3;
+	&:before {
+		content: '';
+		width: 0;
+		height: 100%;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	i {
+		font-size: 24px;
+		line-height: 40px;
+		width: 40px;
+		height: 40px;
+		text-align: center;
+		vertical-align: middle;
+		display: inline-block;
+	}
+	img {
+		border-radius: 6px;
+		min-width: 100%;
+		min-height: 100%;
+		max-width: 100%;
+		max-height: 100%;
+		width: auto;
+		height: auto;
+		margin: -1000px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+}

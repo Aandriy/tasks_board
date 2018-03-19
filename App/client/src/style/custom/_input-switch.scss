@@ -1,0 +1,82 @@
+.input-switch-container {
+	margin: 0 0 10px;
+	.input-switch-label,
+	.input-switch {
+		vertical-align: middle;
+		margin-bottom: 0;
+	}
+	.input-switch {
+		margin-right: 6px;
+	}
+}
+
+label.checkbox .input-switch,
+label.checkbox.inline .input-switch {
+	margin-left: -20px;
+	margin-right: 5px;
+}
+
+.input-switch {
+	min-width: 50px;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	border-radius: 3px;
+	box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.4);
+	margin: 0;
+}
+
+.input-switch input[type="checkbox"] {
+	position: absolute;
+	z-index: -1;
+	width: 1px;
+	height: 0;
+}
+
+.input-switch-group {
+	margin: 0 0 0 -100%;
+	float: left;
+	width: 100%;
+	position: relative;
+	@include transition(margin .35s ease-in-out);
+}
+
+.input-switch-on,
+.input-switch-off {
+	display: block;
+	clear: both;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.input-switch-on {
+	margin: 0 0 -100% 0;
+	float: left;
+	width: 100%;
+	padding-right: 15px;
+}
+
+.input-switch-off {
+	position: relative;
+	left: 100%;
+	padding-left: 15px;
+}
+
+.input-switch {
+	input:checked+.input-switch-group {
+		margin: 0;
+	}
+}
+
+.input-switch-handle {
+	position: absolute;
+	margin: 0 auto;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	height: 100%;
+	width: 0;
+	border-width: 0 1px;
+	left: 100%;
+	top: 0;
+	margin: 0 0 0 -9px;
+}
